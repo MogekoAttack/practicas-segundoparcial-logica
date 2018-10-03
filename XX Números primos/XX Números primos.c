@@ -21,4 +21,5 @@ int main(){
 		printf("Introduzca 1 para repetir\n");
 		scanf("%i",&z);
 	}while(z==1);
+	return 0;
 }
