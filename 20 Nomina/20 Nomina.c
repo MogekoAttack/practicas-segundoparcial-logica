@@ -64,9 +64,10 @@ int main(){
 	texto_inferior_default();
 	texto_cuadro_default();
 	scanf("%i",&z);
+	system("cls");
 	switch(z){
 		case 1:
-			system("cls");
+			nvo_empleado();
 		break;
 	}
 	return 0;
