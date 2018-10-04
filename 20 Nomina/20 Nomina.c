@@ -9,8 +9,7 @@ void cuadxy(int x,int y){
 	dwPos.X = x;  
 	dwPos.Y= y;  
 	SetConsoleCursorPosition(hcon,dwPos);  
-}  
-
+}
 void cuadro(){
 	system("MODE CON cols=200 lines=40");
 	int z;
@@ -38,8 +37,37 @@ void cuadro(){
 	}
 	printf("%c",188);
 }
-
+void texto_cuadro_default(){
+	//Titulos
+	cuadxy(1,1);
+	printf("Nombre");
+	cuadxy(40,1);
+	printf("Couta");
+	cuadxy(60,1);
+	printf("Horas");
+	cuadxy(90,1);
+	printf("Salario en bruto");
+	cuadxy(120,1);
+	printf("Impuestos");
+	cuadxy(160,1);
+	printf("Salario neto");
+}
+void texto_inferior_default(){
+	//Texto de la parte inferior
+	cuadxy(2,190);
+	printf("1.- Agregar empleado\n");
+	printf("2.- Modificar empleado\n");
+}
 int main(){
+	int z;
 	cuadro();
+	texto_inferior_default();
+	texto_cuadro_default();
+	scanf("%i",&z);
+	switch(z){
+		case 1:
+			system("cls");
+		break;
+	}
 	return 0;
 }
