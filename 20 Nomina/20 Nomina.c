@@ -58,8 +58,13 @@ void texto_inferior_default(){
 	printf("1.- Agregar empleado\n");
 	printf("2.- Modificar empleado\n");
 }
-int main(){
+char* nvo_empleado(){
+	printf("Ingrese el nombre del empleado");
+	scanf("")
+}
+main(){
 	int z;
+	char nombre[1,]
 	cuadro();
 	texto_inferior_default();
 	texto_cuadro_default();
@@ -70,5 +75,4 @@ int main(){
 			nvo_empleado();
 		break;
 	}
-	return 0;
 }
