@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <windows.h>
+main(){
+	int z,tabla,contador,numero_empleado_modificar=0,horas_empleado[20],empleado_verificador[20],numero_empleados=0;
+	float cuota_empleado[20],impuestos_empleado[contador],salario_neto_empleado[20];
+	char empleado_nombre[20][64];
+	do{
+		system("cls");
+		if(numero_empleados==0){
+			printf("no hay empleados, presione 1 para agregar\n");
+			scanf("%i",&z);
+		}else{
+			for(contador=1;contador<=numero_empleados;contador++){
+				printf("%i Nombre: %s\n",contador,empleado_nombre[contador]);
+			}
+			printf("1.- Agregar empleado\n");
+			printf("2.- Modificar empleado\n");
+			printf("3.- Ver tabla de salarios");
+			scanf("%i",&z);
+		}
+		system("cls");
+		switch(z){
+			case 1:
+				printf("Ingrese nombre completo(sin espacios): ");
+				scanf("%s",&empleado_nombre[numero_empleados+1]);
+				numero_empleados++;
+			break;
+			case 2:
+				printf("Ingrese el numero de empleado a modificar: ");
+				scanf("%i",&numero_empleado_modificar);
+				if(numero_empleado_modificar>0 && numero_empleado_modificar<20){
+					printf("Recuerde que para no modifcar ningún valor deje los espacios vacios\n");
+					printf("Nombre: %s \n",empleado_nombre[numero_empleado_modificar]);
+					printf("Nueva cuota: ");
+					scanf("%f",&cuota_empleado[numero_empleado_modificar]);
+					printf("Horas trabajadas: ");
+					scanf("%i",&horas_empleado[numero_empleado_modificar]);
+					fflush(stdout);
+					z=1;
+				}
+			break;
+			case 3:
+				printf("Nombre \tCuota \tHoras \tSalario neto \tImpuestos \tSalario neto\n");
+				for(contador=1;contador<=numero_empleados;contador++){
+					impuestos_empleado[contador] = cuota_empleado[contador]/80;
+					salario_neto_empleado[contador] = (cuota_empleado[contador]*horas_empleado[contador])-impuestos_empleado[contador];
+					printf("%s \t%.2f \t%i \t%.2f \t%.2f \t%.2f\n",empleado_nombre[contador],cuota_empleado[contador],horas_empleado[contador],cuota_empleado[contador]*horas_empleado[contador],impuestos_empleado[contador],salario_neto_empleado[contador]);
+				}
+				system("pause");
+			break;
+		}
+	}while(z!=0);
+}
