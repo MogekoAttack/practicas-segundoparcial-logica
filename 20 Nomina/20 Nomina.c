@@ -58,21 +58,34 @@ void texto_inferior_default(){
 	printf("1.- Agregar empleado\n");
 	printf("2.- Modificar empleado\n");
 }
-char* nvo_empleado(){
+char* nvo_empleado(int cantidad_empleados){
+	char nombre[cantidad_empleados][64];
 	printf("Ingrese el nombre del empleado");
-	scanf("")
+	scanf("%s",&nombre[cantidad_empleados+1]);
+	return nombre[cantidad_empleados+1];
+	cantidad_empleados++;
+}
+void texto_cuadro_nombre(char nombre[]){
+	int z;
+	for(z=1;z<=10;z++){
+		cuadxy(1,z+10);
+		printf("%s",nombre[z]);
+	}
 }
 main(){
-	int z;
-	char nombre[1,]
-	cuadro();
-	texto_inferior_default();
-	texto_cuadro_default();
-	scanf("%i",&z);
-	system("cls");
-	switch(z){
-		case 1:
-			nvo_empleado();
-		break;
-	}
+	int z,cantidad_empleados=0;
+	char nombre[10][64];
+	do{
+		cuadro();
+		texto_inferior_default();
+		texto_cuadro_default();
+		
+		scanf("%i",&z);
+		system("cls");
+		switch(z){
+			case 1:
+				nvo_empleado(cantidad_empleados);
+			break;
+		}
+	}while(z!=0);
 }
