@@ -15,7 +15,8 @@ main(){
 			}
 			printf("1.- Agregar empleado\n");
 			printf("2.- Modificar empleado\n");
-			printf("3.- Ver tabla de salarios");
+			printf("3.- Ver tabla de salarios\n");
+			printf("0-. Salir");
 			scanf("%i",&z);
 		}
 		system("cls");
@@ -40,11 +41,11 @@ main(){
 				}
 			break;
 			case 3:
-				printf("Nombre \tCuota \tHoras \tSalario neto \tImpuestos \tSalario neto\n");
+				printf("Nombre \t\tCuota \t\tHoras \t\tSalario neto \t\tImpuestos \t\tSalario neto\n");
 				for(contador=1;contador<=numero_empleados;contador++){
 					impuestos_empleado[contador] = cuota_empleado[contador]/80;
 					salario_neto_empleado[contador] = (cuota_empleado[contador]*horas_empleado[contador])-impuestos_empleado[contador];
-					printf("%s \t%.2f \t%i \t%.2f \t%.2f \t%.2f\n",empleado_nombre[contador],cuota_empleado[contador],horas_empleado[contador],cuota_empleado[contador]*horas_empleado[contador],impuestos_empleado[contador],salario_neto_empleado[contador]);
+					printf("%s \t\t%.2f \t\t%i \t\t%.2f \t\t%.2f \t\t%.2f\n",empleado_nombre[contador],cuota_empleado[contador],horas_empleado[contador],cuota_empleado[contador]*horas_empleado[contador],impuestos_empleado[contador],salario_neto_empleado[contador]);
 				}
 				system("pause");
 			break;
