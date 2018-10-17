@@ -51,4 +51,4 @@ main(){
 			break;
 		}
 	}while(z!=0);
-}
+}a
